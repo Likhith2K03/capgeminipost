@@ -1,0 +1,21 @@
+<mvc:View controllerName="app.capgeminipostb27.controller.CreateView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="CreatePage" title="{i18n>titleCreate}" showNavButton="true" navButtonPress="onFlightDetailsPage">
+    <content />
+        <f:SimpleForm id="idCreateForm" editable="true">
+            <Label text="{i18n>carrId}" ></Label>
+            <Input id='idCarrId' ></Input>
+            <Label text="{i18n>connId}"></Label>
+            <Input id='idConnId' ></Input>
+            <Label text="{i18n>bookId}"></Label>
+            <Input id='idBookId' ></Input>
+            <Label text="{i18n>fldate}"></Label>
+            <Input id='idFldate' type="Date" width="450px"></Input>
+            <Label text="{i18n>orderDate}"></Label>
+            <Input id='idOrderDate' type="Date" width="450px"></Input>
+            <Button text="Create" width="200px" press="onCreate"></Button>
+        </f:SimpleForm>
+    </Page>
+</mvc:View>

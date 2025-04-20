@@ -1,0 +1,43 @@
+<mvc:View controllerName="app.capgeminipostb27.controller.FlightView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content />
+        <Table items="{FlightModel>/}">
+            <columns>
+                <Column >
+                    <Text text="{i18n>carrId}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>connId}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>bookId}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>fldate}"></Text>
+                </Column>
+                <Column >
+                    <Text text="{i18n>orderDate}"></Text>
+                </Column>
+                <Column ></Column>
+            </columns>
+            <ColumnListItem >
+                <cells>
+                    <Text text="{FlightModel>Carrid}"></Text>
+                    <Text text="{FlightModel>Connid}"></Text>
+                    <Text text="{FlightModel>Bookid}"></Text>
+                    <Text text="{FlightModel>Fldate}"></Text>
+                    <Text text="{FlightModel>OrderDate}"></Text>
+                    <Button icon="sap-icon://delete" press="onDelete"></Button>
+                </cells>
+            </ColumnListItem>
+        </Table>
+        <footer>
+            <OverflowToolbar >
+                <ToolbarSpacer />
+                <Button text="Create" press="onCreatePage"></Button>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
