@@ -1,9 +1,29 @@
 <mvc:View controllerName="app.capgeminipostb27.controller.FlightView"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:comp="sap.ui.comp.filterbar"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
     <content />
-        <Table items="{FlightModel>/}">
+
+         <comp:FilterBar >
+            <comp:filterItems>
+                <comp:FilterItem name="Location ID" label="Filter Location ID">
+                    <comp:control>
+                        <Label  text="Location ID" ></Label>
+                        <Input id="idLocID" placeholder="Enter Location ID" liveChange="onSearch"></Input>
+                    </comp:control>
+                </comp:FilterItem>
+ 
+                <comp:FilterItem name="Location Desc" label="Filter Location Description">
+                    <comp:control>
+                        <Label  text="Location Desc" ></Label>
+                        <Input id="idLocDesc" placeholder="Enter Location Desc" liveChange="onSearch"></Input>
+                    </comp:control>
+                </comp:FilterItem>
+            </comp:filterItems>
+        </comp:FilterBar>
+
+        <Table items="{FlightModel>/}" mode="SingleSelectMaster" selectionChange="onItemSelect">
             <columns>
                 <Column >
                     <Text text="{i18n>carrId}"></Text>

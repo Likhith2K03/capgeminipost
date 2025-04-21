@@ -1,10 +1,10 @@
 sap.ui.define([
     "./BaseController",
     "sap/m/MessageBox"
-], (Controller, MessageBox) => {
+], (BaseController, MessageBox) => {
     "use strict";
 
-    return Controller.extend("app.capgeminipostb27.controller.FlightView", {
+    return BaseController.extend("app.capgeminipostb27.controller.CreateView", {
         onInit() {
             
         },

@@ -1,10 +1,10 @@
 sap.ui.define([
     "./BaseController",
     "sap/m/MessageBox"
-], (Controller, MessageBox) => {
+], (BaseController, MessageBox) => {
     "use strict";
 
-    return Controller.extend("app.capgeminipostb27.controller.FlightView", {
+    return BaseController.extend("app.capgeminipostb27.controller.FlightView", {
         onInit() {
             this._getData();
         },
@@ -19,7 +19,7 @@ sap.ui.define([
             oModel.read(entitySet, {
                 success: (oData, response) => {
                     var oModelData = new sap.ui.model.json.JSONModel(oData.results);
-                    this.getView().setModel(oModelData, "FlightModel")
+                    this.getView().getParent().setModel(oModelData, "FlightModel")
                 }
             })
         },
@@ -56,7 +56,19 @@ sap.ui.define([
                     MessageBox.error(error);
                 }
             });
-        }
+        },
+
+        onItemSelect(oEvent) {
+			//When triggered directs to the DetailView
+			let oList = oEvent.getParameter("listItem");
+			let sPath = oList.getBindingContextPath();
+			let aParts = sPath.split("/");
+			let id = aParts[aParts.length - 1];
+            let oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("RouteDetailView", {
+                path: id
+            })
+		}
 
     });
 });

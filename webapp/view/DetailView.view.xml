@@ -1,0 +1,21 @@
+<mvc:View controllerName="app.capgeminipostb27.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="Detailpage" title="{i18n>titleDetail}" showNavButton="true" navButtonPress="onFlightPage">
+        <content>
+            <f:SimpleForm id="idDetailView" editable="true">
+                <Label text="{i18n>carrId}" ></Label>
+                <Text text="{FlightModel>Carrid}"></Text>
+                <Label text="{i18n>connId}"></Label>
+                <Text text="{FlightModel>Connid}"></Text>
+                <Label text="{i18n>bookId}" ></Label>
+                <Text text="{FlightModel>Bookid}"></Text>
+                <Label text="{i18n>fldate}"></Label>
+                <Text text="{FlightModel>Fldate}" ></Text>
+                <Label text="{i18n>orderDate}"></Label>
+                <Text text="{FlightModel>OrderDate}"></Text>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

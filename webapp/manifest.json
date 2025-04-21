@@ -104,7 +104,7 @@
       },
       "routes": [
         {
-          "name": "RouteFlightView",
+          "name": " ",
           "pattern": ":?query:",
           "target": [
             "TargetFlightView"
@@ -115,6 +115,13 @@
           "pattern": "create",
           "target": [
             "TargetCreateView"
+          ]
+        },
+        {
+          "name": "RouteDetailView",
+          "pattern": "BookingDetails/{path}",
+          "target": [
+            "TargetDetailView"
           ]
         }
       ],
@@ -128,6 +135,12 @@
           "viewType": "XML",
           "viewId": "CreatePage",
           "viewName": "CreateView",
+          "transition": "fade"
+        },
+        "TargetDetailView": {
+          "viewType": "XML",
+          "viewId": "DetailPage",
+          "viewName": "DetailView",
           "transition": "fade"
         }
       }
